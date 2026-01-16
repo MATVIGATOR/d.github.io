@@ -1,0 +1,28 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix fable: <http://example.org/fable-ontology/> .
+@prefix ex: <http://example.org/aesop/fox-grapes/> .
+@prefix char: <http://example.org/character/> .
+@prefix ev: <http://example.org/event/> .
+
+# 1. 이야기 전체 정보와 교훈
+ex:fox-and-grapes
+    a fable:Fable ;
+    dc:title "여우와 신포도" ;
+    fable:hasCharacter char:fox ;
+    fable:hasMoral "얻지 못하는 것을 가치 없는 것으로 비하하는 태도를 경계해야 한다." .
+
+# 2. 등장인물: 여우
+char:fox
+    a fable:Character ;
+    dc:title "여우" ;
+    fable:status "배가 고픈 상태" ;
+    fable:participatesIn ev:trying-to-get-grapes .
+
+# 3. 주요 사건: 포도 따기 시도와 심리 변화
+ev:trying-to-get-grapes
+    a fable:Event ;
+    dc:description "여우가 포도나무의 포도를 따기 위해 점프하지만 실패함" ;
+    fable:cause "배고픔" ;
+    fable:result "포기 및 인지부조화 발생" ;
+    fable:rationalization "저 포도는 분명히 실 거야!" .

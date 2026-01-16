@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>빛나와 알아보는 움직이는 이야기 맵</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- D3.js Library for the Mind Map -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <h1>🦊 빛나와 알아보는 움직이는 이야기 맵 🍇</h1>
+            <p class="subtitle">동그라미를 눌러보거나, 챗봇에게 물어보세요!</p>
+        </header>
+
+        <!-- Mind Map Container -->
+        <div id="mindmap-container"></div>
+
+        <!-- Chatbot Floating Button -->
+        <button id="chatbot-toggle-btn" class="chatbot-btn">
+            🤖 궁금해!
+        </button>
+
+        <!-- Chatbot Window -->
+        <div id="chatbot-window" class="chatbot-window">
+            <div class="chat-header">
+                <span>📖 이야기 박사님</span>
+                <span class="close-chat">&times;</span>
+            </div>
+            <div id="chat-messages" class="chat-messages">
+                <div class="message bot-message">
+                    안녕! 나는 이야기 박사님이야.<br>
+                    '여우와 신포도' 이야기에 대해 궁금한 게 있니?<br>
+                    예: "이 이야기의 교훈이 뭐야?"
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="user-input" placeholder="여기에 물어봐..." autocomplete="off">
+                <button id="send-btn">전송</button>
+            </div>
+        </div>
+
+        <!-- Popup Modal for Story Details -->
+        <div id="story-modal" class="hidden">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2 id="modal-title">제목</h2>
+                <div id="modal-body">내용이 여기에 나옵니다.</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="mindmap.js"></script>
+</body>
+
+</html>
